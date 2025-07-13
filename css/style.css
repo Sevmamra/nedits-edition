@@ -33,9 +33,9 @@ header {
 }
 
 .header-title-img {
-  height: 140px;
+  height: 150px;
   margin-left: 0 auto;
-  margin-right: 30px;
+  margin-right: 40px;
   display: block;
 }
 
@@ -81,8 +81,8 @@ nav a:hover {
 }
 
 .hero-title-img {
-  height: 340px;
-  margin: 10px auto 20px auto;
+  height: 350px;
+  margin: 10px auto;
   display: block;
 }
 
@@ -97,7 +97,7 @@ nav a:hover {
   transition: 0.3s;
   box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
   display: block;
-  margin: 70px auto;
+  margin: 50px auto;
 }
 
 .explore-btn:hover {
