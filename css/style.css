@@ -1,4 +1,4 @@
-/* Reset */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +15,9 @@ body {
 /* Header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
   color: #fff;
+  text-align: center;
 }
 
 .header-container {
@@ -24,22 +25,21 @@ header {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
   height: 60px;
 }
 
-.logo-title {
-  font-size: 50px;
-  font-weight: 700;
-  letter-spacing: 2px;
+.header-title-img {
+  height: 60px;
 }
 
 .tagline {
   font-size: 16px;
   font-weight: 500;
-  margin-top: 6px;
+  margin-top: 8px;
   letter-spacing: 1px;
 }
 
@@ -74,10 +74,8 @@ nav a:hover {
   color: #fff;
 }
 
-.hero-title {
-  font-size: 65px;
-  color: royalblue;
-  font-weight: 700;
+.hero-title-img {
+  height: 80px;
   margin-bottom: 15px;
 }
 
@@ -97,6 +95,7 @@ nav a:hover {
   font-weight: 600;
   transition: 0.3s;
   box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
+  display: inline-block;
 }
 
 .explore-btn:hover {
@@ -159,12 +158,13 @@ nav a:hover {
   line-height: 1.6;
 }
 
-/* About Section */
+/* About Us */
 .about-box {
   background: #fff;
   border-radius: 14px;
   padding: 30px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-top: 20px;
 }
 
 .about-box p {
@@ -196,11 +196,13 @@ nav a:hover {
 .testimonial p {
   font-style: italic;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .testimonial span {
   color: #7b0091;
   font-weight: 600;
+  font-size: 15px;
 }
 
 /* Contact Form */
@@ -209,6 +211,7 @@ nav a:hover {
   border-radius: 14px;
   padding: 35px;
   box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  margin-top: 20px;
 }
 
 form input, form textarea {
@@ -242,6 +245,7 @@ footer {
   text-align: center;
   padding: 18px;
   font-size: 14px;
+  margin-top: 50px;
 }
 
 .footer-links {
@@ -269,7 +273,7 @@ footer {
   color: #ee0979;
 }
 
-/* AOS animations override */
+/* AOS Animations Defaults */
 [data-aos] {
   opacity: 0;
   transition-property: transform, opacity;
