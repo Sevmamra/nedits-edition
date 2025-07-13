@@ -1,0 +1,58 @@
+/* Variables for Dark/Light Mode */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --primary: #7928ca;
+    --gradient: linear-gradient(45deg, #ff0080, #7928ca);
+    --nav-bg: rgba(34, 34, 34, 0.9);
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --nav-bg: rgba(20, 20, 20, 0.9);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.5s;
+}
+
+/* Glass Navbar */
+nav {
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+}
+
+/* Service Cards (Glass Effect) */
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Parallax Hero */
+.hero {
+    background: url('assets/hero-bg.jpg') fixed center/cover;
+}
+
+/* Animated Underline */
+h2 span {
+    background-image: linear-gradient(var(--primary), var(--primary));
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.5s;
+}
+
+h2:hover span {
+    background-size: 100% 3px;
+}
