@@ -3,179 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nedits Edition</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            padding: 30px;
-            text-align: center;
-            background: linear-gradient(45deg, #ff0080, #7928ca);
-            color: white;
-        }
-        nav {
-            background-color: #222;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #444;
-        }
-        .hero {
-            padding: 80px 20px;
-            text-align: center;
-            background: url('https://picsum.photos/seed/purple/1200/400') no-repeat center center/cover;
-            color: white;
-        }
-        .hero h1 {
-            font-size: 60px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 8px #000;
-        }
-        .section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .service-card {
-            background-color: white;
-            padding: 25px;
-            margin: 15px;
-            flex: 1 1 250px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px #910091;
-        }
-        .service-card h3 {
-            color: #910091;
-        }
-        .contact-form {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        form button {
-            background-color: #910091;
-            color: white;
-            border: none;
-            padding: 14px 25px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        form button:hover {
-            background-color: #730073;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin-top: 30px;
-            font-size: 14px;
-        }
-        .section h2 {
-            color: #333;
-            border-bottom: 3px solid #910091;
-            display: inline-block;
-            padding-bottom: 6px;
-            margin-bottom: 25px;
-        }
-    </style>
+    <title>Nedits Edition | Premium Creative Services</title>
+    <meta name="description" content="Professional Graphic Design, Video Editing & Web Development Services.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header with Gradient -->
+    <header>
+        <h1>Nedits Edition</h1>
+        <p>Your Creative Digital Partner</p>
+    </header>
 
-<header>
-    <h1>Nedits Edition</h1>
-    <p>Your Creative Digital Partner</p>
-</header>
+    <!-- Glass Morphism Navbar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="darkModeToggle">🌙 Dark Mode</button>
+    </nav>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <!-- Parallax Hero Section -->
+    <section class="hero" id="home">
+        <h1>Elevate Your Brand</h1>
+        <p>Design | Edit | Develop | Manage</p>
+    </section>
 
-<div class="hero" id="home">
-    <h1>Welcome to Nedits Edition</h1>
-    <p>Design | Edit | Develop | Manage</p>
-</div>
-
-<div class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="service-card">
-            <h3>Graphic Designing</h3>
-            <p>Posters, social media creatives, brand kits & more with a modern, creative touch.</p>
+    <!-- Services Section with Glass Cards -->
+    <section class="section" id="services">
+        <h2>Our <span>Services</span></h2>
+        <div class="services">
+            <!-- Service Cards (6 Examples) -->
+            <div class="service-card">
+                <h3>🎨 Graphic Design</h3>
+                <p>Modern logos, social media creatives & brand kits.</p>
+                <button class="read-more">Read More</button>
+            </div>
+            <!-- Add 5 more cards similarly -->
         </div>
-        <div class="service-card">
-            <h3>Video Editing</h3>
-            <p>Premium edits for YouTube, Instagram reels, promotional videos and ads.</p>
-        </div>
-        <div class="service-card">
-            <h3>Website Development</h3>
-            <p>Clean, responsive, SEO-friendly websites for personal brands & businesses.</p>
-        </div>
-        <div class="service-card">
-            <h3>Social Media Management</h3>
-            <p>Boost your online presence with expert growth strategies and content plans.</p>
-        </div>
-        <div class="service-card">
-            <h3>Brand Identity Creation</h3>
-            <p>Logo designing, color palette planning and complete brand identity setup.</p>
-        </div>
-    </div>
-</div>
+    </section>
 
-<div class="section" id="about">
-    <h2>About Us</h2>
-    <p>Nedits Edition is a creative brand based in India, helping content creators, influencers, startups and businesses enhance their digital presence. We specialize in high-quality visuals, engaging content and brand-focused strategies that make a difference.</p>
-</div>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2>About <span>Us</span></h2>
+        <p>We transform ideas into stunning digital experiences...</p>
+    </section>
 
-<div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-form">
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</div>
+    <!-- Contact Form with Validation -->
+    <section class="section" id="contact">
+        <h2>Get In <span>Touch</span></h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2025 Nedits Edition. All rights reserved.</p>
-</footer>
+    <!-- Footer with Social Links -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+        </div>
+        <p>&copy; 2025 Nedits Edition. All rights reserved.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
