@@ -33,9 +33,9 @@ header {
 }
 
 .header-title-img {
-  height: 160px;
+  height: 140px;
   margin-left: 0 auto;
-  margin-right: 20px
+  margin-right: 30px
   display: block;
 }
 
@@ -82,7 +82,7 @@ nav a:hover {
 
 .hero-title-img {
   height: 340px;
-  margin: 0 auto 40px auto;
+  margin: 20px auto 40px auto;
   display: block;
 }
 
