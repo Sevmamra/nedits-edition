@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nedits Edition</title>
+  <title>NEDITS Edition</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- AOS Animation CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
@@ -19,12 +19,15 @@
 </head>
 
 <body>
-
   <!-- Header -->
   <header>
-    <img src="images/logo.png" alt="Nedits Logo" style="height:60px;">
-    <h1>Nedits Edition</h1>
-    <p>Your Creative Digital Partner</p>
+    <div class="header-container">
+      <img src="images/logo.png" alt="NEDITS Logo" class="logo">
+      <div class="header-text">
+        <h1 class="logo-title">NEDITS Edition</h1>
+        <p class="tagline">Your Creative Digital Partner</p>
+      </div>
+    </div>
   </header>
 
   <!-- Navigation -->
@@ -39,9 +42,9 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-overlay" data-aos="zoom-in-down">
-      <h1>Welcome to <span class="gradient-text">Nedits Edition</span></h1>
-      <p>Design | Edit | Develop | Manage</p>
-      <a href="#services" class="btn red-btn">Explore Services</a>
+      <h1 class="hero-title">Welcome to <span class="gradient-text">NEDITS Edition</span></h1>
+      <p class="hero-sub">Design | Edit | Develop | Manage</p>
+      <a href="#services" class="btn explore-btn">Explore Services</a>
     </div>
   </section>
 
@@ -49,62 +52,62 @@
   <section class="section" id="services">
     <h2>Our Services</h2>
     <div class="services">
-
       <div class="service-card" data-aos="fade-up">
-        <h3>🎨 Graphic Designing</h3>
+        <img src="images/icon-graphic.png" alt="Graphic Icon" class="service-icon">
+        <h3>Graphic Designing</h3>
         <p>Posters, social media creatives, brand kits & more with a modern, creative touch.</p>
       </div>
-
       <div class="service-card" data-aos="fade-up">
-        <h3>🎥 Video Editing</h3>
+        <img src="images/icon-video.png" alt="Video Icon" class="service-icon">
+        <h3>Video Editing</h3>
         <p>Premium edits for YouTube, Instagram reels, promotional videos and ads.</p>
       </div>
-
       <div class="service-card" data-aos="fade-up">
-        <h3>🌐 Website Development</h3>
-        <p>Clean, responsive, SEO-friendly websites for personal brands & businesses.</p>
+        <img src="images/icon-web.png" alt="Web Icon" class="service-icon">
+        <h3>Website Development</h3>
+        <p>Clean, responsive, SEO‑friendly websites for personal brands & businesses.</p>
       </div>
-
       <div class="service-card" data-aos="fade-up">
-        <h3>📲 Social Media Management</h3>
+        <img src="images/icon-social.png" alt="Social Icon" class="service-icon">
+        <h3>Social Media Management</h3>
         <p>Boost your online presence with expert growth strategies and content plans.</p>
       </div>
-
       <div class="service-card" data-aos="fade-up">
-        <h3>🖌️ Brand Identity Creation</h3>
-        <p>Logo designing, color palette planning and complete brand identity setup.</p>
+        <img src="images/icon-brand.png" alt="Brand Icon" class="service-icon">
+        <h3>Brand Identity Creation</h3>
+        <p>Logo designing, color palette planning & complete brand identity setup.</p>
       </div>
-
     </div>
   </section>
 
   <!-- About Section -->
   <section class="section" id="about">
     <h2>About Us</h2>
-    <p id="about-text" data-aos="fade-right">
-      Nedits Edition is a creative brand based in India, helping content creators, influencers, startups and businesses enhance their digital presence. We specialize in high-quality visuals, engaging content and brand-focused strategies that make a difference.
-    </p>
+    <div class="about-box" data-aos="fade-right">
+      <p id="about-text">
+        Nedits Edition is a creative brand based in India, helping content creators, influencers, startups and businesses enhance their digital presence. We specialize in high-quality visuals, engaging content and brand-focused strategies that make a difference.
+      </p>
+    </div>
   </section>
 
   <!-- Testimonials Section -->
   <section class="section" id="testimonials">
     <h2>What Our Clients Say</h2>
-
     <div class="testimonial" data-aos="zoom-in">
+      <div class="testimonial-bar"></div>
       <p>"Nedits Edition transformed my brand's Instagram game with stunning designs and timely deliveries!"</p>
       <span>- Priya S., Social Media Influencer</span>
     </div>
-
     <div class="testimonial" data-aos="zoom-in">
+      <div class="testimonial-bar"></div>
       <p>"Excellent website development service. Clean, responsive, and exactly as promised."</p>
       <span>- Akash R., Startup Founder</span>
     </div>
-
     <div class="testimonial" data-aos="zoom-in">
+      <div class="testimonial-bar"></div>
       <p>"Super professional video editing for my YouTube channel. Gained huge audience engagement!"</p>
       <span>- Manav T., YouTube Creator</span>
     </div>
-
   </section>
 
   <!-- Contact Section -->
@@ -115,7 +118,7 @@
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
         <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">Send Message</button>
+        <button type="submit" class="btn contact-btn">Send Message</button>
       </form>
     </div>
   </section>
@@ -128,36 +131,30 @@
       <a href="#">Terms of Service</a>
     </div>
     <div class="social-icons">
-      <a href="https://exampleinsta.com" target="_blank">Instagram</a> |
-      <a href="https://examplefacebook.com" target="_blank">Facebook</a> |
-      <a href="https://exampleyoutube.com" target="_blank">YouTube</a>
+      <a href="#" target="_blank">Instagram</a> |
+      <a href="#" target="_blank">Facebook</a> |
+      <a href="#" target="_blank">YouTube</a>
     </div>
-    <p>&copy; 2025 Nedits Edition. All rights reserved.</p>
+    <p>&copy; 2025 NEDITS Edition. All rights reserved.</p>
   </footer>
 
-  <!-- AOS Animation JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
-  </script>
-
-  <!-- Typewriter Animation JS -->
-  <script>
-    const text = document.getElementById("about-text");
-    const originalText = text.textContent;
-    text.textContent = "";
-    let i = 0;
-    function typeEffect() {
-      if (i < originalText.length) {
-        text.textContent += originalText.charAt(i);
-        i++;
-        setTimeout(typeEffect, 30);
+    // Typewriter effect
+    const aboutText = document.getElementById('about-text');
+    const fullText = aboutText.textContent;
+    aboutText.textContent = '';
+    let idx = 0;
+    function typeWriter() {
+      if (idx < fullText.length) {
+        aboutText.textContent += fullText.charAt(idx);
+        idx++;
+        setTimeout(typeWriter, 30);
       }
     }
-    window.addEventListener("load", () => {
-      typeEffect();
-    });
+    window.addEventListener('load', typeWriter);
   </script>
-
 </body>
 </html>
