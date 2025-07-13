@@ -1,152 +1,171 @@
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #222;
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  padding: 10px 20px;
 }
 
 .nav-logo {
-    height: 45px;
+  height: 45px;
 }
 
 .nav-right a {
-    color: #f2f2f2;
-    padding: 14px 16px;
-    text-decoration: none;
+  color: #f2f2f2;
+  padding: 12px 14px;
+  text-decoration: none;
 }
 
 .nav-right a:hover {
-    background-color: #444;
+  background-color: #444;
 }
 
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
-    color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+  color: white;
 }
 
-.hero h1 {
-    font-size: 60px;
-    margin-bottom: 10px;
+.hero-text-logo {
+  width: 240px;
+  margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 25px;
 }
 
 .btn {
-    background-color: #910091;
-    color: white;
-    padding: 14px 30px;
-    border-radius: 5px;
-    text-decoration: none;
+  background-color: #910091;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
 .btn:hover {
-    background-color: #730073;
+  background-color: #730073;
 }
 
 .section {
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .section h2 {
-    color: #333;
-    border-bottom: 3px solid #910091;
-    display: inline-block;
-    padding-bottom: 6px;
-    margin-bottom: 25px;
+  color: #333;
+  border-bottom: 3px solid #910091;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 30px;
 }
 
 .services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .service-card {
-    background-color: white;
-    padding: 25px;
-    margin: 15px;
-    flex: 1 1 250px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: all 0.3s;
+  background-color: white;
+  padding: 25px;
+  margin: 15px;
+  flex: 1 1 260px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  transition: all 0.3s;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #910091;
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px #910091;
 }
 
 .service-card h3 {
-    color: #910091;
+  color: #910091;
+  margin-bottom: 12px;
 }
 
 .contact-form {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 form button {
-    background-color: #910091;
-    color: white;
-    border: none;
-    padding: 14px 25px;
-    border-radius: 6px;
-    cursor: pointer;
+  background-color: #910091;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 form button:hover {
-    background-color: #730073;
+  background-color: #730073;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #910091;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
 }
 
 footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: 30px;
-    font-size: 14px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: 30px;
+  font-size: 14px;
 }
 
 .footer-logo {
-    width: 70px;
-    margin-bottom: 12px;
+  width: 70px;
+  margin-bottom: 12px;
 }
 
 footer p {
-    margin: 8px 0;
+  margin: 10px 0;
 }
 
 footer a {
-    color: #f2f2f2;
-    text-decoration: none;
+  color: #f2f2f2;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
