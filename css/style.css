@@ -1,16 +1,16 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   color: #333;
 }
 
 nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #222;
-  padding: 10px 20px;
+  align-items: center;
+  background: #222;
+  padding: 12px 20px;
 }
 
 .nav-logo {
@@ -19,24 +19,25 @@ nav {
 
 .nav-right a {
   color: #f2f2f2;
-  padding: 12px 14px;
   text-decoration: none;
+  padding: 12px 14px;
 }
 
 .nav-right a:hover {
-  background-color: #444;
+  background: #444;
 }
 
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   background: url('../images/hero-bg.jpg') no-repeat center center/cover;
-  color: white;
+  color: #fff;
 }
 
-.hero-text-logo {
-  width: 240px;
-  margin-bottom: 20px;
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 12px;
+  animation: fadeup 1.5s ease;
 }
 
 .hero p {
@@ -45,16 +46,16 @@ nav {
 }
 
 .btn {
-  background-color: #910091;
-  color: white;
+  background: #910091;
+  color: #fff;
   padding: 14px 30px;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 5px;
   transition: background 0.3s;
 }
 
 .btn:hover {
-  background-color: #730073;
+  background: #730073;
 }
 
 .section {
@@ -64,11 +65,10 @@ nav {
 }
 
 .section h2 {
-  color: #333;
   border-bottom: 3px solid #910091;
   display: inline-block;
-  padding-bottom: 6px;
-  margin-bottom: 30px;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
 }
 
 .services {
@@ -78,65 +78,65 @@ nav {
 }
 
 .service-card {
-  background-color: white;
+  background: #fff;
   padding: 25px;
   margin: 15px;
-  flex: 1 1 260px;
+  flex: 1 1 250px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px #910091;
-}
-
-.service-card h3 {
-  color: #910091;
-  margin-bottom: 12px;
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #910091;
 }
 
 .contact-form {
-  background-color: #fff;
+  background: #fff;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
 }
 
 form input, form textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
 form button {
-  background-color: #910091;
-  color: white;
-  border: none;
+  background: #910091;
+  color: #fff;
   padding: 14px 25px;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 form button:hover {
-  background-color: #730073;
+  background: #730073;
 }
 
-.testimonial {
+.testimonial-card {
   background: #fff;
   padding: 20px;
-  margin: 20px 0;
+  margin: 15px 0;
   border-left: 4px solid #910091;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  transition: all 0.4s;
 }
 
-.testimonial span {
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #910091;
+}
+
+.testimonial-card span {
   display: block;
   margin-top: 8px;
   font-size: 14px;
@@ -144,17 +144,11 @@ form button:hover {
 }
 
 footer {
-  background-color: #222;
-  color: white;
+  background: #222;
+  color: #fff;
   text-align: center;
   padding: 30px 15px;
-  margin-top: 30px;
-  font-size: 14px;
-}
-
-.footer-logo {
-  width: 70px;
-  margin-bottom: 12px;
+  margin-top: 40px;
 }
 
 footer p {
@@ -168,4 +162,15 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
