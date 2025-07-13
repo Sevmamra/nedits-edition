@@ -23,17 +23,16 @@ header {
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .logo {
-  height: 60px;
+  height: 70px;
 }
 
 .header-title-img {
-  height: 90px;
+  height: 100px;
 }
 
 .tagline {
@@ -68,16 +67,21 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+  background: url('../images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 500px;
   padding: 100px 20px;
   text-align: center;
   color: #fff;
+  position: relative;
 }
 
 .hero-title-img {
   height: 140px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  display: block;
 }
+
 
 .hero-sub {
   font-size: 20px;
@@ -95,7 +99,8 @@ nav a:hover {
   font-weight: 600;
   transition: 0.3s;
   box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
-  display: inline-block;
+  display: block;
+  margin:0 auto;
 }
 
 .explore-btn:hover {
