@@ -33,7 +33,7 @@ header {
 }
 
 .header-title-img {
-  height: 60px;
+  height: 90px;
 }
 
 .tagline {
@@ -75,8 +75,8 @@ nav a:hover {
 }
 
 .hero-title-img {
-  height: 80px;
-  margin-bottom: 15px;
+  height: 140px;
+  margin-bottom: 20px;
 }
 
 .hero-sub {
