@@ -3,75 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nedits Edition | Premium Creative Services</title>
-    <meta name="description" content="Professional Graphic Design, Video Editing & Web Development Services.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <title>Nedits Edition</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with Gradient -->
-    <header>
-        <h1>Nedits Edition</h1>
-        <p>Your Creative Digital Partner</p>
-    </header>
 
-    <!-- Glass Morphism Navbar -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <button id="darkModeToggle">🌙 Dark Mode</button>
-    </nav>
+<header>
+    <h1>Nedits Edition</h1>
+    <p>Your Creative Digital Partner</p>
+</header>
 
-    <!-- Parallax Hero Section -->
-    <section class="hero" id="home">
-        <h1>Elevate Your Brand</h1>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+    <div class="hero-overlay">
+        <h1>Welcome to Nedits Edition</h1>
         <p>Design | Edit | Develop | Manage</p>
-    </section>
+        <a href="#services" class="btn">Explore Services</a>
+    </div>
+</div>
 
-    <!-- Services Section with Glass Cards -->
-    <section class="section" id="services">
-        <h2>Our <span>Services</span></h2>
-        <div class="services">
-            <!-- Service Cards (6 Examples) -->
-            <div class="service-card">
-                <h3>🎨 Graphic Design</h3>
-                <p>Modern logos, social media creatives & brand kits.</p>
-                <button class="read-more">Read More</button>
-            </div>
-            <!-- Add 5 more cards similarly -->
+<div class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>🎨 Graphic Designing</h3>
+            <p>Posters, social media creatives, brand kits & more with a modern, creative touch.</p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <h2>About <span>Us</span></h2>
-        <p>We transform ideas into stunning digital experiences...</p>
-    </section>
-
-    <!-- Contact Form with Validation -->
-    <section class="section" id="contact">
-        <h2>Get In <span>Touch</span></h2>
-        <div class="contact-form">
-            <form id="contactForm">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <div class="service-card">
+            <h3>🎥 Video Editing</h3>
+            <p>Premium edits for YouTube, Instagram reels, promotional videos and ads.</p>
         </div>
-    </section>
-
-    <!-- Footer with Social Links -->
-    <footer>
-        <div class="social-links">
-            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+        <div class="service-card">
+            <h3>🌐 Website Development</h3>
+            <p>Clean, responsive, SEO-friendly websites for personal brands & businesses.</p>
         </div>
-        <p>&copy; 2025 Nedits Edition. All rights reserved.</p>
-    </footer>
+        <div class="service-card">
+            <h3>📲 Social Media Management</h3>
+            <p>Boost your online presence with expert growth strategies and content plans.</p>
+        </div>
+        <div class="service-card">
+            <h3>🖌️ Brand Identity Creation</h3>
+            <p>Logo designing, color palette planning and complete brand identity setup.</p>
+        </div>
+    </div>
+</div>
 
-    <script src="script.js"></script>
+<div class="section" id="about">
+    <h2>About Us</h2>
+    <p>Nedits Edition is a creative brand based in India, helping content creators, influencers, startups and businesses enhance their digital presence. We specialize in high-quality visuals, engaging content and brand-focused strategies that make a difference.</p>
+</div>
+
+<div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Nedits Edition. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
