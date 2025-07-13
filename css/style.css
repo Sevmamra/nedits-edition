@@ -28,13 +28,14 @@ header {
 }
 
 .logo {
-  height: 100px;
+  height: 120px;
   margin-left: 20px;
 }
 
 .header-title-img {
-  height: 140px;
-  margin: 0 auto;
+  height: 180px;
+  margin-left: 0 auto;
+  margin-right: 30px
   display: block;
 }
 
@@ -80,8 +81,8 @@ nav a:hover {
 }
 
 .hero-title-img {
-  height: 200px;
-  margin: 0 auto 30px auto;
+  height: 280px;
+  margin: 20px auto 20px auto;
   display: block;
 }
 
@@ -92,10 +93,11 @@ nav a:hover {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 28px
   transition: 0.3s;
   box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
   display: block;
-  margin: 100px auto;
+  margin: 120px auto;
 }
 
 .explore-btn:hover {
