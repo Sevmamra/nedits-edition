@@ -18,6 +18,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
+
   <!-- Header -->
   <header data-aos="fade-down">
     <div class="header-container">
@@ -36,11 +37,12 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Slider -->
   <section class="hero" id="home">
-    <div class="hero-overlay" data-aos="zoom-in-down">
-      <img src="images/hero-title.png" alt="Welcome to NEDITS Edition" class="hero-title-img" />
+    <div class="hero-overlay">
+      <img src="images/hero-bg-1.jpg" alt="Hero Image" class="hero-img" />
       <a href="#services" class="btn explore-btn">Explore Services</a>
+      <div class="slider-dots"></div>
     </div>
   </section>
 
@@ -137,7 +139,68 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 1500
+    });
+
+    const heroImages = [
+      "images/hero-bg-1.jpg",
+      "images/hero-bg-2.jpg",
+      "images/hero-bg-3.jpg",
+      "images/hero-bg-4.jpg",
+      "images/hero-bg-5.jpg",
+      "images/hero-bg-6.jpg"
+    ];
+
+    let currentIndex = 0;
+    const heroImg = document.querySelector('.hero-img');
+    const dotsContainer = document.querySelector('.slider-dots');
+
+    // Create dots
+    heroImages.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.addEventListener('click', () => showImage(i));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = dotsContainer.querySelectorAll('span');
+
+    function showImage(index) {
+      heroImg.style.opacity = 0;
+      setTimeout(() => {
+        heroImg.src = heroImages[index];
+        heroImg.style.opacity = 1;
+        currentIndex = index;
+        updateDots();
+      }, 400);
+    }
+
+    function updateDots() {
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
+    }
+
+    function nextImage() {
+      let next = (currentIndex + 1) % heroImages.length;
+      showImage(next);
+    }
+
+    setInterval(nextImage, 5000);
+    showImage(0);
+
+    let startX;
+    document.querySelector('.hero').addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.querySelector('.hero').addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) {
+        nextImage();
+      } else if (endX - startX > 50) {
+        let prev = (currentIndex - 1 + heroImages.length) % heroImages.length;
+        showImage(prev);
+      }
+    });
 
     // Typewriter effect for About
     const aboutText = document.getElementById('about-text');
