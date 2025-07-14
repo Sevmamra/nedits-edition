@@ -1,12 +1,9 @@
-/* ======================================
-   Global Reset & Body
-====================================== */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
@@ -14,88 +11,31 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ======================================
-   Header (PC / Laptop / iPad)
-====================================== */
+/* Header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 0px 10px;
-  color: #fff;
+  padding: 10px;
   text-align: center;
-  line-height: 1;
+  color: #fff;
 }
-
 .header-container {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 5px;
-  padding: 2px 0;
-  position: relative;
+  align-items: flex-start;
+  gap: 8px;
 }
-
-.logo {
-  height: 70px;
-  position: relative;
-  top: 10px;
-  right: -13px;
-}
-
-.header-title-img {
-  height: 95px;
-  position: relative;
-  top: -2px;
-  left: -3px;
-}
-
+.logo { height: 90px; }
+.header-title-img { height: 120px; margin-top: -8px; }
 .tagline {
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: -5px;
-  letter-spacing: 0.5px;
-  position: relative;
-  top: -10px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  margin-top: -4px;
 }
 
-/* ======================================
-   Header — Mobile (max-width: 767px)
-====================================== */
-@media (max-width: 767px) {
-  header {
-    padding: 10px 10px;
-  }
-
-  .header-container {
-    gap: 8px;
-    padding: 5px 0;
-  }
-
-  .logo {
-    height: 95px;
-    top: 12px;
-    right: -10px;
-  }
-
-  .header-title-img {
-    height: 125px;
-    top: -1px;
-    left: 0;
-  }
-
-  .tagline {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: -4px;
-    letter-spacing: 0.7px;
-    top: -8px;
-  }
-}
-
-/* ======================================
-   Navigation
-====================================== */
+/* Navigation */
 nav {
-  background-color: #222;
+  background: linear-gradient(90deg, #222, #444);
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -103,96 +43,90 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
-
 nav a {
   color: #f2f2f2;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  position: relative;
+  padding: 4px 0;
 }
-
-nav a:hover {
-  color: #ee0979;
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #ee0979;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
 }
+nav a:hover::after, nav a:focus::after { width: 100%; }
 
-/* ======================================
-   Hero Section (with smooth background transition)
-====================================== */
+/* Hero Section */
 .hero {
-  background: url('../images/hero-bg1.jpg') no-repeat center center;
+  background-position: center;
   background-size: cover;
   height: 550px;
-  padding: 100px 20px;
-  text-align: center;
-  color: #fff;
   position: relative;
-  transition: background-image 1s ease-in-out;
-  overflow: hidden;
+  transition: background-image 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+.hero-overlay {
+  text-align: center;
+  z-index: 1;
 }
-
-.hero-title-img {
-  height: 360px;
-  margin: -150px auto 20px auto;
-  display: block;
-}
-
+.hero-title-img { height: 360px; display: block; margin: 0 auto; }
 .explore-btn {
-  background: red;
+  margin-top: 40px;
+  background: #ff3a3a;
   color: white;
-  padding: 10px 24px;
-  border-radius: 50px;
-  text-decoration: none;
+  padding: 12px 28px;
+  font-size: 20px;
   font-weight: 600;
-  font-size: 22px;
-  transition: 0.3s;
+  border-radius: 50px;
   box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
   display: inline-block;
-  margin: 50px auto 0 auto;
+  text-decoration: none;
+  animation: bounce 2s infinite;
+  position: relative;
+}
+.explore-btn:hover { background: #cc0000; }
+
+/* Button Bounce Animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-.explore-btn:hover {
-  background: darkred;
+/* Section Titles */
+.section-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 30px;
+  display: inline-block;
+  border-bottom: 4px solid #7b0091;
+  padding-bottom: 8px;
 }
 
-/* ======================================
-   Section Headings
-====================================== */
+/* Sections Layout */
 .section {
   padding: 70px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-.section h2 {
-  font-size: 32px;
-  color: #333;
-  display: inline-block;
-  margin-bottom: 30px;
-  border-bottom: 4px solid #7b0091;
-  padding-bottom: 8px;
-}
-
-/* ======================================
-   Services Section
-====================================== */
+/* Services */
 .services {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
 }
-
 .service-card {
   background: #fff;
   border-radius: 14px;
@@ -200,51 +134,51 @@ nav a:hover {
   flex: 1 1 250px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
 }
-
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 25px #7b0091;
 }
-
-.service-icon {
-  height: 60px;
-  margin-bottom: 15px;
+/* Rotating Light Border & Icon Tilt */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -3px; left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  border: 2px solid rgba(255,255,255,0);
+  border-radius: 16px;
+  pointer-events: none;
+}
+.service-card.active::before {
+  animation: light-border 2s infinite;
+  border-image: linear-gradient(45deg, #ff6a00, #ee0979) 1;
+}
+@keyframes light-border {
+  0%   { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+.service-card.icon-tilt.active .service-icon {
+  transform: rotate(-10deg);
+  transition: 0.3s;
 }
 
-.service-card h3 {
-  font-size: 22px;
-  color: #7b0091;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.service-card p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* ======================================
-   About Us Section
-====================================== */
+/* About Us */
 .about-box {
   background: #fff;
   border-radius: 14px;
   padding: 30px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  margin-top: 20px;
 }
-
 .about-box p {
   font-size: 16px;
   line-height: 1.8;
-  color: #333;
 }
 
-/* ======================================
-   Testimonials Section
-====================================== */
+/* Testimonials */
 .testimonial {
   background: #fff;
   border-radius: 14px;
@@ -252,41 +186,40 @@ nav a:hover {
   margin-bottom: 20px;
   position: relative;
   box-shadow: 0 0 18px rgba(0,0,0,0.08);
+  opacity: 0;
 }
-
 .testimonial-bar {
   position: absolute;
-  left: 0;
-  top: 10px;
-  height: 80%;
-  width: 4px;
+  left: 0; top: 10px;
+  height: 80%; width: 4px;
   background: #7b0091;
   border-radius: 2px;
 }
-
-.testimonial p {
-  font-style: italic;
-  margin-bottom: 10px;
-  font-size: 16px;
+/* Slide-in Animations */
+.testimonial-left { animation: slide-in-left 0.8s forwards; }
+.testimonial-right { animation: slide-in-right 0.8s forwards; margin-top: 20px; }
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(100px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.testimonial span {
-  color: #7b0091;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-/* ======================================
-   Contact Form Section
-====================================== */
+/* Contact Form */
 .contact-form {
   background: #fff;
   border-radius: 14px;
   padding: 35px;
   box-shadow: 0 0 20px rgba(0,0,0,0.08);
   margin-top: 20px;
+  text-align: center;
 }
-
+.contact-form form {
+  max-width: 500px;
+  margin: auto;
+}
 form input, form textarea {
   width: 100%;
   padding: 14px;
@@ -295,7 +228,6 @@ form input, form textarea {
   border-radius: 8px;
   font-size: 15px;
 }
-
 .contact-btn {
   background: linear-gradient(45deg, #ff0080, #7928ca);
   color: white;
@@ -303,59 +235,54 @@ form input, form textarea {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s;
-  display: inline-block;
+  font-size: 16px;
 }
-
 .contact-btn:hover {
   box-shadow: 0 0 20px #910091;
 }
 
-/* ======================================
-   Footer Section
-====================================== */
+/* Footer */
 footer {
   background: #222;
   color: #f2f2f2;
   text-align: center;
   padding: 18px;
   font-size: 14px;
-  margin-top: 50px;
 }
-
 .footer-links {
   margin-bottom: 10px;
 }
-
 .footer-links a {
   color: #f2f2f2;
   margin: 0 12px;
   text-decoration: none;
-  transition: 0.3s;
+  position: relative;
 }
-
-.footer-links a:hover {
-  color: #ee0979;
+.footer-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff6a00;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -3px; left: 0;
 }
+.footer-links a:hover::after { width: 100%; }
 
 .social-icons a {
   color: #f2f2f2;
   margin: 0 8px;
-  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
 }
+.social-icons a:hover { color: #ff6a00; }
 
-.social-icons a:hover {
-  color: #ee0979;
-}
-
-/* ======================================
-   AOS Animations Defaults
-====================================== */
-[data-aos] {
-  opacity: 0;
-  transition-property: transform, opacity;
-}
-
-[data-aos].aos-animate {
-  opacity: 1;
+/* AOS Animation Disable for Titles, Boxes, Forms */
+.section-title,
+.about-box, 
+.contact-form {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
