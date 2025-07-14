@@ -15,7 +15,7 @@ body {
 /* Header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 15px 30px;
+  padding: 8px 30px;
   color: #fff;
   text-align: center;
 }
@@ -28,12 +28,12 @@ header {
 }
 
 .logo {
-  height: 120px;
+  height: 100px;
   margin-left: 20px;
 }
 
 .header-title-img {
-  height: 150px;
+  height: 130px;
   margin-left: 10 auto;
   margin-right: 80 auto;
   display: block;
