@@ -15,7 +15,7 @@ body {
 /* Header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 0px 15px;
+  padding: 0px 10px;
   color: #fff;
   text-align: center;
   line-height: 1;
@@ -23,32 +23,34 @@ header {
 
 .header-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 5px;
   margin: 0;
+  padding: 2px 0;
 }
 
 .logo {
-  height: 100px;
-  margin-left: 20px;
+  height: 70px;
+  margin-left: 10px;
+  margin-top: -5px;
 }
 
 .header-title-img {
-  height: 130px;
-  margin-left: 10 auto;
-  margin-right: 80 auto;
+  height: 95px;
   display: block;
+  margin: -5px auto 0 auto;
 }
 
 .tagline {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  margin-top: 2px;
-  letter-spacing: 1px;
+  margin-top: -5px;
+  letter-spacing: 0.5px;
   position: relative;
-  top: -8px;
+  top: -14px;
 }
+
 
 /* Navigation */
 nav {
