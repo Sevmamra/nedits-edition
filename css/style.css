@@ -33,9 +33,9 @@ header {
 
 .logo {
   height: 70px;
-  top: 4px;
+  top: 6px;
   position: relative;
-  left: -2px;
+  left: -1px;
 }
 
 .header-title-img {
