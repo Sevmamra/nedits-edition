@@ -127,7 +127,26 @@ nav a:hover {
   text-align: center;
   color: #fff;
   position: relative;
-  transition: background-image 1s ease-in-out;
+  transition: background-image 2s ease-in-out;
+  overflow: hidden;
+}
+
+/* Black overlay using ::after */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* 0.4 opacity black overlay */
+  z-index: 0;
+}
+
+/* Hero content ko upar lana */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title-img {
@@ -139,20 +158,21 @@ nav a:hover {
 .explore-btn {
   background: red;
   color: white;
-  padding: 14px 28px;
+  padding: 10px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 22px;
   transition: 0.3s;
-  box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
-  display: block;
-  margin: 150px auto;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+  display: inline-block;
+  margin: 50px auto 0 auto;
 }
 
 .explore-btn:hover {
   background: darkred;
 }
+
 
 .hero-overlay::after {
   content: '';
