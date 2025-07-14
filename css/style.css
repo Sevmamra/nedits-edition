@@ -407,3 +407,79 @@ footer {
     padding: 10px 20px;
   }
 }
+
+/* Hero section base */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 964px;
+  margin: 0 auto;
+  aspect-ratio: 241 / 320;
+  overflow: hidden;
+}
+
+/* Hero image */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 0;
+}
+
+/* Title image center */
+.hero-title-img {
+  position: absolute;
+  z-index: 2;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 70%;
+  height: auto;
+}
+
+/* Explore button */
+.explore-btn {
+  position: absolute;
+  z-index: 2;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ff0080, #7928ca);
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 26px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Explore button hover effect */
+.explore-btn:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.7);
+}
+
+/* Hero desktop tuning */
+@media (min-width: 992px) {
+  .hero {
+    height: 500px;
+    aspect-ratio: auto;
+  }
+
+  .hero-title-img {
+    max-width: 60%;
+    top: 20%;
+  }
+
+  .explore-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    bottom: 16%;
+  }
+}
+
