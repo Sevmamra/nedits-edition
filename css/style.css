@@ -1,5 +1,5 @@
 /* ==============================================
-   GLOBAL RESET & BASE
+   GLOBAL RESET & BASE STYLES
 ============================================== */
 * {
   margin: 0;
@@ -16,43 +16,65 @@ body {
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 /* ==============================================
-   HEADER & NAVIGATION
+   HEADER (Desktop & Mobile)
 ============================================== */
+
+/* Base header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 10px;
+  padding: 8px 10px;
   text-align: center;
   color: #fff;
 }
 
+/* Header container */
 .header-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
+/* Logo and title sizes */
 .logo {
-  height: 95px;
+  height: 60px; /* Reduced for desktop */
 }
 
 .header-title-img {
-  height: 125px;
+  height: 85px; /* Reduced for desktop */
 }
 
 .tagline {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.7px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
 }
 
-/* Navigation */
+/* Mobile header overrides */
+@media (max-width: 767px) {
+  .logo {
+    height: 90px;
+  }
+  .header-title-img {
+    height: 120px;
+  }
+  .tagline {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+  }
+}
+
+/* ==============================================
+   NAVIGATION
+============================================== */
 nav {
   background: #222;
   display: flex;
@@ -66,8 +88,8 @@ nav {
 
 nav a {
   color: #f2f2f2;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
@@ -76,11 +98,14 @@ nav a:hover {
 }
 
 /* ==============================================
-   HERO SECTION & SLIDER
+   HERO SECTION (Fixed Ratio + Centered Title & Button)
 ============================================== */
 .hero {
   position: relative;
-  height: 550px;
+  width: 100%;
+  max-width: 964px;
+  margin: 0 auto;
+  aspect-ratio: 241 / 320; /* Fixed ratio */
   overflow: hidden;
 }
 
@@ -90,74 +115,88 @@ nav a:hover {
   height: 100%;
 }
 
+/* Dark overlay on images */
 .hero-overlay::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   z-index: 1;
 }
 
+/* Hero images */
 .hero-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  inset: 0;
   transition: opacity 0.8s ease-in-out;
   z-index: 0;
 }
 
-.explore-btn {
-  position: relative;
+/* Hero title centered */
+.hero-title-img {
+  position: absolute;
   z-index: 2;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 70%;
+  height: auto;
+}
+
+/* Explore button */
+.explore-btn {
+  position: absolute;
+  z-index: 2;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(45deg, #ff0080, #7928ca);
   color: #fff;
-  padding: 14px 28px;
-  font-size: 32px;
+  padding: 12px 24px;
+  font-size: 28px;
   font-weight: 600;
-  border: none;
   border-radius: 50px;
   text-decoration: none;
-  display: inline-block;
-  margin: 0 auto;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
 }
 
 .explore-btn:hover {
-  transform: scale(1.05);
+  transform: translateX(-50%) scale(1.05);
   box-shadow: 0 8px 24px rgba(255, 0, 0, 0.7);
 }
 
-/* Slider dots */
+/* ==============================================
+   SLIDER DOTS (Below Hero)
+============================================== */
 .slider-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 0;
+  background: #fff;
 }
 
 .slider-dots span {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  background: #fff;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
   border-radius: 50%;
   opacity: 0.6;
   cursor: pointer;
   transition: background 0.3s, opacity 0.3s;
 }
 
-.slider-dots .active {
+.slider-dots span.active {
   background: #ee0979;
   opacity: 1;
 }
 
 /* ==============================================
-   SECTION HEADINGS
+   CONTENT SECTIONS
 ============================================== */
 .section {
   padding: 70px 20px;
@@ -175,7 +214,7 @@ nav a:hover {
 }
 
 /* ==============================================
-   SERVICES
+   SERVICES CARDS (Centered Icons)
 ============================================== */
 .services {
   display: flex;
@@ -190,7 +229,7 @@ nav a:hover {
   padding: 30px 20px;
   flex: 1 1 250px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -201,19 +240,18 @@ nav a:hover {
 
 .service-icon {
   height: 60px;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
   transition: transform 0.3s;
 }
 
 .service-card:hover .service-icon {
-  transform: rotate(20deg);
+  transform: rotate(15deg);
 }
 
 .service-card h3 {
   font-size: 22px;
   color: #7b0091;
   margin-bottom: 10px;
-  font-weight: 700;
 }
 
 .service-card p {
@@ -222,22 +260,18 @@ nav a:hover {
 }
 
 /* ==============================================
-   ABOUT US
+   ABOUT BOX
 ============================================== */
 .about-box {
   background: #fff;
   border-radius: 14px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
   margin-top: 20px;
 }
 
-.about-box p {
-  font-size: 16px;
-}
-
 /* ==============================================
-   TESTIMONIALS
+   TESTIMONIAL SECTION
 ============================================== */
 .testimonial {
   background: #fff;
@@ -245,7 +279,7 @@ nav a:hover {
   padding: 25px;
   margin-bottom: 20px;
   position: relative;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 18px rgba(0,0,0,0.08);
 }
 
 .testimonial-bar {
@@ -260,14 +294,14 @@ nav a:hover {
 
 .testimonial p {
   font-style: italic;
-  margin-bottom: 10px;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .testimonial span {
   color: #7b0091;
-  font-weight: 600;
   font-size: 15px;
+  font-weight: 600;
 }
 
 /* ==============================================
@@ -277,7 +311,7 @@ nav a:hover {
   background: #fff;
   border-radius: 14px;
   padding: 35px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
   margin-top: 20px;
 }
 
@@ -290,14 +324,15 @@ form input, form textarea {
   font-size: 15px;
 }
 
+/* Button styling */
 .contact-btn {
   background: linear-gradient(45deg, #ff0080, #7928ca);
-  color: white;
+  color: #fff;
   padding: 14px 28px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-btn:hover {
@@ -344,7 +379,7 @@ footer {
 }
 
 /* ==============================================
-   AOS ANIMATION OVERRIDES
+   AOS OVERRIDES
 ============================================== */
 [data-aos] {
   opacity: 0;
@@ -356,25 +391,19 @@ footer {
 }
 
 /* ==============================================
-   RESPONSIVE BREAKPOINTS (MOBILE)
+   RESPONSIVE (Mobile)
 ============================================== */
 @media (max-width: 767px) {
-  .services {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .explore-btn {
-    font-size: 28px;
-    padding: 12px 24px;
-  }
-
   .hero {
-    height: 400px;
+    max-width: 100%;
+  }
+  .hero-title-img {
+    max-width: 80%;
+    top: 18%;
+  }
+  .explore-btn {
+    font-size: 24px;
+    bottom: 22%;
+    padding: 10px 20px;
   }
 }
