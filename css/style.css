@@ -15,7 +15,7 @@ body {
 /* Header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: -4px 30px;
+  padding: -10px 30px;
   color: #fff;
   text-align: center;
 }
@@ -42,8 +42,10 @@ header {
 .tagline {
   font-size: 16px;
   font-weight: 500;
-  margin-top: 8px;
+  margin-top: 2px;
   letter-spacing: 1px;
+  position: relative;
+  top: -4px;
 }
 
 /* Navigation */
