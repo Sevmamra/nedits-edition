@@ -15,7 +15,7 @@ body {
 /* Header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 5px 20px;
+  padding: 0px 15px;
   color: #fff;
   text-align: center;
   line-height: 1;
@@ -25,7 +25,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   margin: 0;
 }
 
