@@ -35,7 +35,7 @@ header {
 .header-title-img {
   height: 150px;
   margin-left: 10 auto;
-  margin-right: 50 auto;
+  margin-right: 80 auto;
   display: block;
 }
 
@@ -82,7 +82,7 @@ nav a:hover {
 
 .hero-title-img {
   height: 360px;
-  margin: -140px auto 20px auto;
+  margin: -150px auto 20px auto;
   display: block;
 }
 
@@ -97,7 +97,7 @@ nav a:hover {
   transition: 0.3s;
   box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
   display: block;
-  margin: 140px auto;
+  margin: 150px auto;
 }
 
 .explore-btn:hover {
