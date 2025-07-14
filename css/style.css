@@ -35,15 +35,14 @@ header {
   height: 70px;
   top: 2px;
   position: relative;
-  left: -6px;
+  left: -2px;
 }
 
 .header-title-img {
   height: 95px;
-  display: block;
-  margin-top: -5px;
+  top: 2px;
   position: relative;
-  left: 10px;
+  left: 8px;
 }
 
 .tagline {
