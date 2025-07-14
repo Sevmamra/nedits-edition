@@ -143,12 +143,6 @@ nav a:hover {
   z-index: 0;
 }
 
-/* Hero content ko upar lana */
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-}
-
 .hero-title-img {
   height: 360px;
   margin: -150px auto 20px auto;
