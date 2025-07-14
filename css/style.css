@@ -1,4 +1,6 @@
-/* Reset & Base */
+/* ======================================
+   1. Reset & Global Styles
+====================================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +11,12 @@ body {
   background: #f4f4f4;
   color: #333;
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
-/* Header */
+/* ======================================
+   2. Header
+====================================== */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
   padding: 10px;
@@ -24,18 +29,13 @@ header {
   align-items: flex-start;
   gap: 8px;
 }
-
-@media (min-width: 768px) {
-  header {
-    padding: 5px 10px;
-  }
-  .logo { height: 70px; }
-  .header-title-img { height: 95px; margin-top: 0; }
-  .tagline { font-size: 15px; margin-top: -5px; }
+.logo {
+  height: 90px;
 }
-
-.logo { height: 90px; }
-.header-title-img { height: 120px; margin-top: -8px; }
+.header-title-img {
+  height: 120px;
+  margin-top: -8px;
+}
 .tagline {
   font-size: 18px;
   font-weight: 600;
@@ -43,7 +43,29 @@ header {
   margin-top: -4px;
 }
 
-/* Navigation */
+/* ==============================
+   Responsive Header (Tablet/PC)
+============================== */
+@media (min-width: 768px) {
+  header {
+    padding: 5px 10px;
+  }
+  .logo {
+    height: 70px;
+  }
+  .header-title-img {
+    height: 95px;
+    margin-top: 0;
+  }
+  .tagline {
+    font-size: 15px;
+    margin-top: -5px;
+  }
+}
+
+/* ======================================
+   3. Navigation Bar
+====================================== */
 nav {
   background: linear-gradient(90deg, #222, #444);
   display: flex;
@@ -53,7 +75,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 nav a {
   color: #f2f2f2;
@@ -64,56 +86,72 @@ nav a {
 }
 nav a::after {
   content: '';
-  display: block;
-  width: 0;
-  height: 3px;
-  background: #ee0979;
-  transition: width 0.3s;
   position: absolute;
   bottom: -2px;
   left: 0;
+  width: 0;
+  height: 3px;
+  background: #ee0979;
+  transition: width 0.3s ease;
 }
-nav a:hover::after, nav a:focus::after { width: 100%; }
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
 
-/* Hero Section */
+/* ======================================
+   4. Hero Section
+====================================== */
 .hero {
+  position: relative;
+  height: 550px;
   background-position: center;
   background-size: cover;
-  height: 550px;
-  position: relative;
-  transition: background-image 1s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-image 1s ease;
 }
 .hero-overlay {
   text-align: center;
   z-index: 1;
 }
-.hero-title-img { height: 360px; display: block; margin: 0 auto; }
+.hero-title-img {
+  height: 360px;
+  display: block;
+  margin: 0 auto;
+}
 .explore-btn {
   margin-top: 40px;
   background: #ff3a3a;
-  color: white;
+  color: #fff;
   padding: 12px 28px;
   font-size: 20px;
   font-weight: 600;
   border-radius: 50px;
   box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-  display: inline-block;
   text-decoration: none;
+  display: inline-block;
   animation: bounce 2s infinite;
-  position: relative;
 }
-.explore-btn:hover { background: #cc0000; }
+.explore-btn:hover {
+  background: #cc0000;
+}
 
-/* Button Bounce Animation */
+/* Bounce effect keyframes */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
 
-/* Section Titles */
+/* ======================================
+   5. Sections & Titles
+====================================== */
+.section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 .section-title {
   font-size: 32px;
   color: #333;
@@ -123,14 +161,18 @@ nav a:hover::after, nav a:focus::after { width: 100%; }
   padding-bottom: 8px;
 }
 
-/* Sections Layout */
-.section {
-  padding: 70px 20px;
-  max-width: 1100px;
-  margin: auto;
+/* Prevent AOS animations on these */
+.section-title,
+.about-box,
+.contact-form {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
-/* Services */
+/* ======================================
+   6. Services Section
+====================================== */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -138,26 +180,33 @@ nav a:hover::after, nav a:focus::after { width: 100%; }
   gap: 25px;
 }
 .service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
   padding: 25px 15px;
   flex: 1 1 220px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  overflow: hidden;
   opacity: 0;
   transform: translateY(50px);
-  transition: 0.6s;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .service-card.show {
   opacity: 1;
   transform: translateY(0);
 }
+.service-icon {
+  height: 60px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
 
-/* Rotating Light Border & Icon Tilt */
+/* Rotating light border on active */
 .service-card::before {
   content: '';
   position: absolute;
-  top: -3px; left: -3px;
-  width: calc(100% + 6px);
-  height: calc(100% + 6px);
-  border: 2px solid rgba(255,255,255,0);
+  inset: -3px;
+  border: 2px solid transparent;
   border-radius: 16px;
   pointer-events: none;
 }
@@ -166,11 +215,16 @@ nav a:hover::after, nav a:focus::after { width: 100%; }
   border-image: linear-gradient(45deg, #ff6a00, #ee0979) 1;
 }
 @keyframes light-border {
-  0%   { transform: rotate(0); }
-  100% { transform: rotate(360deg); }
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+.service-card.active .service-icon {
+  transform: rotate(-10deg);
 }
 
-/* About Us */
+/* ======================================
+   7. About Section
+====================================== */
 .about-box {
   background: #fff;
   border-radius: 14px;
@@ -182,36 +236,34 @@ nav a:hover::after, nav a:focus::after { width: 100%; }
   line-height: 1.8;
 }
 
-/* Testimonials */
+/* ======================================
+   8. Testimonials Section
+====================================== */
 .testimonial {
+  position: relative;
   background: #fff;
   border-radius: 14px;
   padding: 25px;
   margin-bottom: 20px;
-  position: relative;
   box-shadow: 0 0 18px rgba(0,0,0,0.08);
   opacity: 0;
 }
 .testimonial-bar {
   position: absolute;
-  left: 0; top: 10px;
-  height: 80%; width: 4px;
+  left: 0;
+  top: 10px;
+  height: 80%;
+  width: 4px;
   background: #7b0091;
   border-radius: 2px;
 }
-/* Slide-in Animations */
-.testimonial-left { animation: slide-in-left 0.8s forwards; }
-.testimonial-right { animation: slide-in-right 0.8s forwards; margin-top: 20px; }
-@keyframes slide-in-left {
-  from { opacity: 0; transform: translateX(-100px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-@keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(100px); }
-  to   { opacity: 1; transform: translateX(0); }
+.testimonial.shown {
+  opacity: 1;
 }
 
-/* Contact Form */
+/* ======================================
+   9. Contact Section
+====================================== */
 .contact-form {
   background: #fff;
   border-radius: 14px;
@@ -224,7 +276,8 @@ nav a:hover::after, nav a:focus::after { width: 100%; }
   max-width: 500px;
   margin: auto;
 }
-form input, form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 14px;
   margin: 12px 0;
@@ -234,7 +287,7 @@ form input, form textarea {
 }
 .contact-btn {
   background: linear-gradient(45deg, #ff0080, #7928ca);
-  color: white;
+  color: #fff;
   padding: 14px 28px;
   border: none;
   border-radius: 50px;
@@ -245,7 +298,9 @@ form input, form textarea {
   box-shadow: 0 0 20px #910091;
 }
 
-/* Footer */
+/* ======================================
+   10. Footer
+====================================== */
 footer {
   background: #222;
   color: #f2f2f2;
@@ -264,29 +319,43 @@ footer {
 }
 .footer-links a::after {
   content: '';
-  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
   width: 0;
   height: 2px;
   background: #ff6a00;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -3px; left: 0;
+  transition: width 0.3s ease;
 }
-.footer-links a:hover::after { width: 100%; }
-
+.footer-links a:hover::after {
+  width: 100%;
+}
+.social-icons {
+  margin-bottom: 8px;
+}
 .social-icons a {
   color: #f2f2f2;
   margin: 0 8px;
   font-size: 20px;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
-.social-icons a:hover { color: #ff6a00; }
+.social-icons a:hover {
+  color: #ff6a00;
+}
 
-/* AOS Animation Disable for Titles, Boxes, Forms */
-.section-title,
-.about-box, 
-.contact-form {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
+/* ======================================
+   11. Utility & Responsive
+====================================== */
+/* Make hero responsive */
+@media (max-width: 576px) {
+  .hero {
+    height: 400px;
+  }
+  .hero-title-img {
+    height: 200px;
+  }
+  .explore-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
 }
