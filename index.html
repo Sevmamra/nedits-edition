@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NEDITS Edition</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
 
   <!-- AOS Animation CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
+
 <body>
 
   <!-- Header -->
   <header data-aos="fade-down">
     <div class="header-container">
-      <img src="images/logo.png" alt="NEDITS Logo" class="logo" />
-      <img src="images/header-title.png" alt="NEDITS Edition" class="header-title-img" />
+      <img src="images/logo.png" alt="NEDITS Logo" class="logo"/>
+      <img src="images/header-title.png" alt="NEDITS Edition" class="header-title-img"/>
     </div>
     <p class="tagline">Your Creative Digital Partner</p>
   </header>
@@ -37,14 +38,12 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Section with Fixed Ratio Image Slider -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="hero-overlay">
-      <img src="images/hero-bg-1.jpg" alt="Hero Image" class="hero-img" />
-      <img src="images/hero-title.png" alt="Hero Title" class="hero-title-img" />
+    <div class="hero-overlay" data-aos="zoom-in-down">
+      <img src="images/hero-title.png" alt="Welcome to NEDITS Edition" class="hero-title-img"/>
       <a href="#services" class="btn explore-btn">Explore Services</a>
     </div>
-    <div class="slider-dots"></div>
   </section>
 
   <!-- Services Section -->
@@ -52,27 +51,27 @@
     <h2 data-aos="fade-up">Our Services</h2>
     <div class="services">
       <div class="service-card" data-aos="fade-up">
-        <img src="images/icon-graphic.png" alt="Graphic Designing" class="service-icon" />
+        <img src="images/icon-graphic.png" alt="Graphic Designing" class="service-icon"/>
         <h3>Graphic Designing</h3>
         <p>Posters, social media creatives, brand kits & more with a modern, creative touch.</p>
       </div>
       <div class="service-card" data-aos="fade-up">
-        <img src="images/icon-video.png" alt="Video Editing" class="service-icon" />
+        <img src="images/icon-video.png" alt="Video Editing" class="service-icon"/>
         <h3>Video Editing</h3>
         <p>Premium edits for YouTube, Instagram reels, promotional videos and ads.</p>
       </div>
       <div class="service-card" data-aos="fade-up">
-        <img src="images/icon-web.png" alt="Website Development" class="service-icon" />
+        <img src="images/icon-web.png" alt="Website Development" class="service-icon"/>
         <h3>Website Development</h3>
         <p>Clean, responsive, SEO‑friendly websites for personal brands & businesses.</p>
       </div>
       <div class="service-card" data-aos="fade-up">
-        <img src="images/icon-social.png" alt="Social Media Management" class="service-icon" />
+        <img src="images/icon-social.png" alt="Social Media Management" class="service-icon"/>
         <h3>Social Media Management</h3>
         <p>Boost your online presence with expert growth strategies and content plans.</p>
       </div>
       <div class="service-card" data-aos="fade-up">
-        <img src="images/icon-brand.png" alt="Brand Identity Creation" class="service-icon" />
+        <img src="images/icon-brand.png" alt="Brand Identity Creation" class="service-icon"/>
         <h3>Brand Identity Creation</h3>
         <p>Logo designing, color palette planning & complete brand identity setup.</p>
       </div>
@@ -114,8 +113,8 @@
     <h2 data-aos="fade-up">Contact Us</h2>
     <div class="contact-form" data-aos="fade-up">
       <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Your Email" required/>
         <textarea rows="5" placeholder="Your Message"></textarea>
         <button type="submit" class="btn contact-btn">Send Message</button>
       </form>
@@ -140,66 +139,9 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1500 });
+    AOS.init();
 
-    const heroImages = [
-      "images/hero-bg-1.jpg",
-      "images/hero-bg-2.jpg",
-      "images/hero-bg-3.jpg",
-      "images/hero-bg-4.jpg",
-      "images/hero-bg-5.jpg",
-      "images/hero-bg-6.jpg"
-    ];
-
-    let currentIndex = 0;
-    const heroImg = document.querySelector('.hero-img');
-    const dotsContainer = document.querySelector('.slider-dots');
-
-    heroImages.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.addEventListener('click', () => showImage(i));
-      dotsContainer.appendChild(dot);
-    });
-    const dots = dotsContainer.querySelectorAll('span');
-
-    function showImage(index) {
-      heroImg.style.opacity = 0;
-      setTimeout(() => {
-        heroImg.src = heroImages[index];
-        heroImg.style.opacity = 1;
-        currentIndex = index;
-        updateDots();
-      }, 400);
-    }
-
-    function updateDots() {
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[currentIndex].classList.add('active');
-    }
-
-    function nextImage() {
-      let next = (currentIndex + 1) % heroImages.length;
-      showImage(next);
-    }
-
-    setInterval(nextImage, 5000);
-    showImage(0);
-
-    let startX;
-    document.querySelector('.hero').addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-
-    document.querySelector('.hero').addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) {
-        nextImage();
-      } else if (endX - startX > 50) {
-        let prev = (currentIndex - 1 + heroImages.length) % heroImages.length;
-        showImage(prev);
-      }
-    });
-
+    // Typewriter effect for About section
     const aboutText = document.getElementById('about-text');
     const fullText = aboutText.textContent;
     aboutText.textContent = '';
@@ -212,6 +154,24 @@
       }
     }
     window.addEventListener('load', typeWriter);
+
+    // Hero Background Slideshow
+    const heroSection = document.querySelector('.hero');
+    const images = [
+      'images/hero-bg1.jpg',
+      'images/hero-bg2.jpg',
+      'images/hero-bg3.jpg',
+      'images/hero-bg4.jpg'
+    ];
+    let currentIndex = 0;
+
+    function changeBackground() {
+      currentIndex = (currentIndex + 1) % images.length;
+      heroSection.style.backgroundImage = `url('${images[currentIndex]}')`;
+    }
+
+    setInterval(changeBackground, 3000);
   </script>
+
 </body>
 </html>
