@@ -131,16 +131,19 @@ nav a:hover {
   overflow: hidden;
 }
 
-/* Black overlay using ::after */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-overlay {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4); /* 0.4 opacity black overlay */
-  z-index: 0;
+}
+
+/* Dark overlay on images */
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
 }
 
 .hero-title-img {
