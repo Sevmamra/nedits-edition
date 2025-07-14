@@ -24,30 +24,26 @@ img {
 /* ==============================================
    HEADER (Desktop & Mobile)
 ============================================== */
-
-/* Base header */
 header {
   background: linear-gradient(45deg, #ff6a00, #ee0979);
-  padding: 8px 10px;
+  padding: 8px 10px; /* header height adjust desktop */
   text-align: center;
   color: #fff;
 }
 
-/* Header container */
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
-/* Logo and title sizes */
 .logo {
-  height: 60px; /* Reduced for desktop */
+  height: 60px; /* छांटेन के लिए श्रेड यानि छोटा logo */
 }
 
 .header-title-img {
-  height: 85px; /* Reduced for desktop */
+  height: 85px; /* logo के नीचे वाले size */
 }
 
 .tagline {
@@ -57,13 +53,13 @@ header {
   margin-top: 4px;
 }
 
-/* Mobile header overrides */
+/* mobile में बड़े header elementen */
 @media (max-width: 767px) {
   .logo {
-    height: 90px;
+    height: 90px; /* ज्यादा बड़ा logo mobile पर */
   }
   .header-title-img {
-    height: 120px;
+    height: 120px; /* ज्यादा बड़ा title image */
   }
   .tagline {
     font-size: 18px;
@@ -73,7 +69,7 @@ header {
 }
 
 /* ==============================================
-   NAVIGATION
+   NAVIGATION BAR
 ============================================== */
 nav {
   background: #222;
@@ -98,33 +94,19 @@ nav a:hover {
 }
 
 /* ==============================================
-   HERO SECTION (Fixed Ratio + Centered Title & Button)
+   HERO SECTION (Desktop, iPad, Mobile)
 ============================================== */
+/* Base styling - common */
 .hero {
   position: relative;
   width: 100%;
-  max-width: 964px;
+  max-width: 964px; /* image width */
   margin: 0 auto;
-  aspect-ratio: 241 / 320; /* Fixed ratio */
   overflow: hidden;
+  height: 500px; /* desktop height */
 }
 
-.hero-overlay {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Dark overlay on images */
-.hero-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 1;
-}
-
-/* Hero images */
+/* Hero image covering container */
 .hero-img {
   position: absolute;
   inset: 0;
@@ -135,43 +117,41 @@ nav a:hover {
   z-index: 0;
 }
 
-/* Hero title centered */
+/* Hero title centered horizontally, positioned based on percent */
 .hero-title-img {
   position: absolute;
-  z-index: 2;
-  top: 20%;
-  left: 50%;
+  top: 16%; /* ऊपर-नीचे इसको adjust करो */
+  left: 50%; /* center horizontal */
   transform: translateX(-50%);
-  max-width: 70%;
+  max-width: 55%; /* छोटा रखा desktop */
   height: auto;
+  z-index: 2;
 }
 
-/* Explore button */
+/* Explore Services button */
 .explore-btn {
   position: absolute;
-  z-index: 2;
-  bottom: 20%;
-  left: 50%;
+  bottom: 12%; /* नीचे से distance */
+  left: 50%; /* horizontally centered */
   transform: translateX(-50%);
   background: linear-gradient(45deg, #ff0080, #7928ca);
   color: #fff;
-  padding: 12px 24px;
-  font-size: 28px;
+  font-size: 22px; /* chhota button text */
+  padding: 8px 20px;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
+  box-shadow: 0 5px 18px rgba(255,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .explore-btn:hover {
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.7);
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255,0,0,0.7);
 }
 
-/* ==============================================
-   SLIDER DOTS (Below Hero)
-============================================== */
+/* Slider dots underneath hero */
 .slider-dots {
   display: flex;
   justify-content: center;
@@ -195,9 +175,43 @@ nav a:hover {
   opacity: 1;
 }
 
+/* iPad specific adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero {
+    height: 420px; /* थोड़ा छोटा */
+  }
+  .hero-title-img {
+    top: 18%; /* vertical adjust */
+    max-width: 65%;
+  }
+  .explore-btn {
+    bottom: 14%;
+    font-size: 24px;
+    padding: 10px 22px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .hero {
+    height: 100vw; /* square-ish mobile hero */
+    max-width: 100%;
+  }
+  .hero-title-img {
+    top: 18%;
+    max-width: 80%;
+  }
+  .explore-btn {
+    bottom: 22%;
+    font-size: 24px;
+    padding: 10px 20px;
+  }
+}
+
 /* ==============================================
-   CONTENT SECTIONS
+   SECTION CONTENT (About, Services, Testimonials)
 ============================================== */
+/* Common section styling */
 .section {
   padding: 70px 20px;
   max-width: 1100px;
@@ -207,15 +221,13 @@ nav a:hover {
 .section h2 {
   font-size: 32px;
   color: #333;
-  display: inline-block;
-  margin-bottom: 30px;
   border-bottom: 4px solid #7b0091;
   padding-bottom: 8px;
+  display: inline-block;
+  margin-bottom: 30px;
 }
 
-/* ==============================================
-   SERVICES CARDS (Centered Icons)
-============================================== */
+/* Services cards */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -227,7 +239,8 @@ nav a:hover {
   background: #fff;
   border-radius: 14px;
   padding: 30px 20px;
-  flex: 1 1 250px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -239,8 +252,8 @@ nav a:hover {
 }
 
 .service-icon {
+  margin: 0 auto 15px; /* center icon */
   height: 60px;
-  margin: 0 auto 15px;
   transition: transform 0.3s;
 }
 
@@ -248,20 +261,7 @@ nav a:hover {
   transform: rotate(15deg);
 }
 
-.service-card h3 {
-  font-size: 22px;
-  color: #7b0091;
-  margin-bottom: 10px;
-}
-
-.service-card p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* ==============================================
-   ABOUT BOX
-============================================== */
+/* About Us card */
 .about-box {
   background: #fff;
   border-radius: 14px;
@@ -270,15 +270,36 @@ nav a:hover {
   margin-top: 20px;
 }
 
+/* Typewriter animation for about text only */
+#about-text {
+  display: inline-block;
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.8;
+  overflow: hidden;
+  border-right: 2px solid #7b0091; /* cursor line */
+  animation: typing 5s steps(60), blink-caret 0.75s step-end infinite;
+}
+
+/* keyframes for typing */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* keyframes for caret blinking */
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
 /* ==============================================
-   TESTIMONIAL SECTION
+   TESTIMONIAL & CONTACT FORM
 ============================================== */
 .testimonial {
   background: #fff;
   border-radius: 14px;
   padding: 25px;
   margin-bottom: 20px;
-  position: relative;
   box-shadow: 0 0 18px rgba(0,0,0,0.08);
 }
 
@@ -295,18 +316,16 @@ nav a:hover {
 .testimonial p {
   font-style: italic;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
 .testimonial span {
+  font-weight: 600;
   color: #7b0091;
   font-size: 15px;
-  font-weight: 600;
 }
 
-/* ==============================================
-   CONTACT FORM
-============================================== */
+/* Contact form */
 .contact-form {
   background: #fff;
   border-radius: 14px;
@@ -324,7 +343,6 @@ form input, form textarea {
   font-size: 15px;
 }
 
-/* Button styling */
 .contact-btn {
   background: linear-gradient(45deg, #ff0080, #7928ca);
   color: #fff;
@@ -341,7 +359,7 @@ form input, form textarea {
 }
 
 /* ==============================================
-   FOOTER
+   FOOTER (Slide Up/Down Animation)
 ============================================== */
 footer {
   background: #222;
@@ -350,8 +368,17 @@ footer {
   padding: 18px;
   font-size: 14px;
   margin-top: 50px;
+  position: relative;
+  animation: footer-slide 4s ease-in-out infinite;
 }
 
+/* keyframe for footer sliding */
+@keyframes footer-slide {
+  0%, 100% { transform: translateY(0); } /* शुरुआती स्थिति */
+  50% { transform: translateY(-15px); }   /* बीच में ऊपर जाएगा */
+}
+
+/* Footer links */
 .footer-links {
   margin-bottom: 10px;
 }
@@ -379,7 +406,7 @@ footer {
 }
 
 /* ==============================================
-   AOS OVERRIDES
+   AOS OVERRIDE (GLOBAL)
 ============================================== */
 [data-aos] {
   opacity: 0;
@@ -388,97 +415,4 @@ footer {
 
 [data-aos].aos-animate {
   opacity: 1;
-}
-
-/* ==============================================
-   RESPONSIVE (Mobile)
-============================================== */
-@media (max-width: 767px) {
-  .hero {
-    max-width: 100%;
-  }
-  .hero-title-img {
-    max-width: 80%;
-    top: 18%;
-  }
-  .explore-btn {
-    font-size: 24px;
-    bottom: 22%;
-    padding: 10px 20px;
-  }
-}
-
-/* Hero section base */
-.hero {
-  position: relative;
-  width: 100%;
-  max-width: 964px;
-  margin: 0 auto;
-  aspect-ratio: 241 / 320;
-  overflow: hidden;
-}
-
-/* Hero image */
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.8s ease-in-out;
-  z-index: 0;
-}
-
-/* Title image center */
-.hero-title-img {
-  position: absolute;
-  z-index: 2;
-  top: 22%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 70%;
-  height: auto;
-}
-
-/* Explore button */
-.explore-btn {
-  position: absolute;
-  z-index: 2;
-  bottom: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(45deg, #ff0080, #7928ca);
-  color: #fff;
-  padding: 12px 24px;
-  font-size: 26px;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 5px 18px rgba(255, 0, 0, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Explore button hover effect */
-.explore-btn:hover {
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.7);
-}
-
-/* Hero desktop tuning */
-@media (min-width: 768px) and (max-width: 991px) {
-  .hero {
-    height: 420px;
-    aspect-ratio: auto;
-  }
-
-  .hero-title-img {
-    max-width: 65%;
-    top: 18%;
-  }
-
-  .explore-btn {
-    font-size: 24px;
-    padding: 10px 22px;
-    bottom: 14%;
-  }
 }
