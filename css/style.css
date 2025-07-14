@@ -33,9 +33,9 @@ header {
 
 .logo {
   height: 70px;
-  margin-top: -5px;
+  top: 2px;
   position: relative;
-  left: -10px;  /* thoda left */
+  left: -6px;
 }
 
 .header-title-img {
@@ -43,7 +43,7 @@ header {
   display: block;
   margin-top: -5px;
   position: relative;
-  left: 10px;  /* thoda right */
+  left: 10px;
 }
 
 .tagline {
